@@ -13,7 +13,7 @@
 #include "config.h"
 #endif
 
-#define SASS_VERSION "0.5.8"
+#define SASS_VERSION "0.5.10"
 #define SASS_FLAVOR  "Sassyphpras"
 
 #include <php.h>
