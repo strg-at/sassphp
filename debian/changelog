@@ -1,6 +1,7 @@
 sassphp (0.5.10-1) unstable; urgency=medium
 
   * New upstream release.
+  * Bump Standards-Version to 3.9.8.
 
  -- Rhonda D'Vine <rhonda@strg.at>  Fri, 17 Mar 2017 15:44:25 +0100
 
