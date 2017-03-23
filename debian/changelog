@@ -4,6 +4,7 @@ sassphp (0.5.10-1) unstable; urgency=medium
   * Bump Standards-Version to 3.9.8.
   * Fix comment in sass.ini.
   * Upload to Debian (closes: #858447)
+  * Create standalone license paragraph in copyright file.
 
  -- Rhonda D'Vine <rhonda@strg.at>  Thu, 23 Mar 2017 11:44:42 +0100
 
