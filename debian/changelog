@@ -3,8 +3,9 @@ sassphp (0.5.10-1) unstable; urgency=medium
   * New upstream release.
   * Bump Standards-Version to 3.9.8.
   * Fix comment in sass.ini.
+  * Upload to Debian (closes: #858447)
 
- -- Rhonda D'Vine <rhonda@strg.at>  Fri, 17 Mar 2017 15:44:25 +0100
+ -- Rhonda D'Vine <rhonda@strg.at>  Thu, 23 Mar 2017 11:44:42 +0100
 
 sassphp (0.5.8-1) unstable; urgency=low
 
