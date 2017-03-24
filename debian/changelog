@@ -1,3 +1,9 @@
+sassphp (0.5.10-2) unstable; urgency=medium
+
+  * Document Vcs-* URLs.
+
+ -- 
+
 sassphp (0.5.10-1) unstable; urgency=medium
 
   * New upstream release.
