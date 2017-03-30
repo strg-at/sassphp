@@ -1,8 +1,9 @@
 sassphp (0.5.10-2) unstable; urgency=medium
 
   * Document Vcs-* URLs.
+  * Add ${php:Depends} to Depends (closes: #858951)
 
- -- 
+ -- Rhonda D'Vine <rhonda@strg.at>  Thu, 30 Mar 2017 09:10:13 +0200
 
 sassphp (0.5.10-1) unstable; urgency=medium
 

@@ -10,7 +10,7 @@ Vcs-Browser: https://github.com/strg-at/sassphp/tree/debian
 
 Package: php7.0-sassphp
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${php:Depends}
 Description: PHP bindings to libsass - fast, native Sass parsing in PHP
  The sass extension for PHP gives you an object-oriented system of parsing Sass
  from within your PHP applications. Under the hood it uses libsass to provide
