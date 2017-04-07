@@ -155,6 +155,7 @@ These extensions also utilise the [Libsass](https://github.com/hcatlin/libsass) 
 
 | Release | Description |
 | --- | --- |
+| 0.5.12 | Cartography - MapRoot functions |
 | 0.5.11 | Zoomer (Libsass 3.4.4) stable |
 | 0.5.10 | Elwood (Libsass 3.4.3) stable & Travis fix |
 | 0.5.9 | Rickshaw (Libsass 3.4.2) stable  |

@@ -470,6 +470,64 @@ PHP_METHOD(Sass, setMapPath)
 }
 
 
+PHP_METHOD(Sass, getMapRoot)
+{
+    zval *this = getThis();
+
+    if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "", NULL) == FAILURE) {
+        RETURN_FALSE;
+    }
+
+    #if ZEND_MODULE_API_NO > 20131226
+    sass_object *obj = Z_SASS_P(this);
+    #endif
+    #if ZEND_MODULE_API_NO <= 20131226
+    sass_object *obj = (sass_object *)zend_object_store_get_object(this TSRMLS_CC);
+    #endif
+
+    #if ZEND_MODULE_API_NO <= 20131226
+    if (obj->map_root == NULL) RETURN_STRING("", 1);
+    RETURN_STRING(obj->map_root, 1);
+    #endif
+
+    #if ZEND_MODULE_API_NO > 20131226
+    if (obj->map_root == NULL) RETURN_STRING("");
+    RETURN_STRING(obj->map_root);
+    #endif
+}
+
+PHP_METHOD(Sass, setMapRoot)
+{
+    zval *this = getThis();
+
+    char *path;
+    #if ZEND_MODULE_API_NO <= 20131226
+    int path_len;
+    #endif
+    #if ZEND_MODULE_API_NO > 20131226
+    size_t path_len;
+    #endif
+
+    if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &path, &path_len) == FAILURE)
+        RETURN_FALSE;
+
+    #if ZEND_MODULE_API_NO > 20131226
+    sass_object *obj = Z_SASS_P(this);
+    #endif
+    #if ZEND_MODULE_API_NO <= 20131226
+    sass_object *obj = (sass_object *)zend_object_store_get_object(this TSRMLS_CC);
+    #endif
+
+    if (obj->map_root != NULL)
+        efree(obj->map_root);
+    obj->map_path = estrndup(path, path_len);
+
+    RETURN_NULL();
+}
+
+
+
+
 PHP_METHOD(Sass, getPrecision)
 {
     zval *this = getThis();
@@ -700,7 +758,10 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_sass_setMapPath, 0, 0, 1)
     ZEND_ARG_INFO(0, map_path)
 ZEND_END_ARG_INFO()
 
-
+ZEND_BEGIN_ARG_INFO_EX(arginfo_sass_setMapRoot, 0, 0, 1)
+    ZEND_ARG_INFO(0, map_root)
+ZEND_END_ARG_INFO()
+    
 zend_function_entry sass_methods[] = {
     PHP_ME(Sass,  __construct,       arginfo_sass_void,           ZEND_ACC_PUBLIC | ZEND_ACC_CTOR)
     PHP_ME(Sass,  compile,           arginfo_sass_compile,        ZEND_ACC_PUBLIC)
@@ -719,6 +780,8 @@ zend_function_entry sass_methods[] = {
     PHP_ME(Sass,  setEmbed,          arginfo_sass_setEmbed,       ZEND_ACC_PUBLIC)
     PHP_ME(Sass,  getMapPath,        arginfo_sass_void,           ZEND_ACC_PUBLIC)
     PHP_ME(Sass,  setMapPath,        arginfo_sass_setMapPath,     ZEND_ACC_PUBLIC)
+    PHP_ME(Sass,  getMapRoot,        arginfo_sass_void,           ZEND_ACC_PUBLIC)
+    PHP_ME(Sass,  setMapRoot,        arginfo_sass_setMapRoot,     ZEND_ACC_PUBLIC)
     PHP_ME(Sass,  getLibraryVersion, arginfo_sass_void,           ZEND_ACC_PUBLIC | ZEND_ACC_STATIC)
     PHP_MALIAS(Sass, compile_file, compileFile, NULL, ZEND_ACC_PUBLIC)
     {NULL, NULL, NULL}

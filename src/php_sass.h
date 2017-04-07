@@ -14,7 +14,7 @@
 #include "config.h"
 #endif
 
-#define SASS_VERSION "0.5.11"
+#define SASS_VERSION "0.5.12"
 #define SASS_FLAVOR  "Sassyphpras"
 
 #include <php.h>
@@ -46,5 +46,7 @@ PHP_METHOD(Sass, getEmbed);
 PHP_METHOD(Sass, setEmbed);
 PHP_METHOD(Sass, getMapPath);
 PHP_METHOD(Sass, setMapPath);
+PHP_METHOD(Sass, getMapRoot);
+PHP_METHOD(Sass, setMapRoot);
 
 #endif
