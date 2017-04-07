@@ -1,4 +1,4 @@
--TEST--
+--TEST--
 correctly handles setting map root
 --SKIPIF--
 <?php if (!extension_loaded("sass")) print "skip"; ?>
