@@ -8,7 +8,7 @@ correctly handles setting map root
 $sass = new Sass();
 // test default from constructor
 $sass->setComments(true);
-$sass->setMapRoot(__DIR__.'/support/');
+$sass->setMapRoot('support');
 $sass->setMapPath('map_root.css.map');
 $css = $sass->compileFile(__DIR__.'/support/test.scss');
 echo $css[1];
@@ -17,7 +17,7 @@ echo $css[1];
 {
 	"version": 3,
 	"file": "tests/support/test.css",
-	"sourceRoot": "/tmp/sassphp/tests/support/",
+	"sourceRoot": "support",
 	"sources": [
 		"tests/support/test.scss"
 	],
