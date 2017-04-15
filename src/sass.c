@@ -520,7 +520,7 @@ PHP_METHOD(Sass, setMapRoot)
 
     if (obj->map_root != NULL)
         efree(obj->map_root);
-    obj->map_path = estrndup(path, path_len);
+    obj->map_root = estrndup(path, path_len);
 
     RETURN_NULL();
 }
