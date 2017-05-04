@@ -2,15 +2,16 @@ Source: sassphp
 Section: web
 Priority: optional
 Maintainer: Rhonda D'Vine <rhonda@strg.at>
-Build-Depends: debhelper (>= 9), libsass-dev, php7.0-dev, dh-php
+Build-Depends: debhelper (>= 9), libsass-dev, php-all-dev, dh-php
 Standards-Version: 3.9.8
 Homepage: https://github.com/absalomedia/sassphp
 Vcs-Git: https://github.com/strg-at/sassphp.git
 Vcs-Browser: https://github.com/strg-at/sassphp/tree/debian
 
-Package: php7.0-sassphp
+Package: php-sass
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${php:Depends}
+Provides: ${php:Provides}
 Description: PHP bindings to libsass - fast, native Sass parsing in PHP
  The sass extension for PHP gives you an object-oriented system of parsing Sass
  from within your PHP applications. Under the hood it uses libsass to provide

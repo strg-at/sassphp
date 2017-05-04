@@ -1,3 +1,10 @@
+sassphp (0.5.10-3) unstable; urgency=low
+
+  [ Ondřej Surý ]
+  * Update packaging to dh-php (closes: #861637)
+
+ -- Rhonda D'Vine <rhonda@strg.at>  Thu, 11 May 2017 10:19:01 +0200
+
 sassphp (0.5.10-2) unstable; urgency=medium
 
   * Document Vcs-* URLs.
