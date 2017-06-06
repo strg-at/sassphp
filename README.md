@@ -148,13 +148,14 @@ If there's a problem, the extension will throw a `SassException`:
 
 These extensions also utilise the [Libsass](https://github.com/hcatlin/libsass) library & remain in varying states of completion:
 
-* Facebook [HHVM](https://github.com/absalomedia/sasshhvm) native (non Zend) extension - with Libsass 3.4.4 - tested up to HHVM 3.11.x
-* [Nginx](https://github.com/absalomedia/sass-nginx-module) module - with Libsass 3.4.4
+* Facebook [HHVM](https://github.com/absalomedia/sasshhvm) native (non Zend) extension - with Libsass 3.4.5 - tested up to HHVM 3.11.x
+* [Nginx](https://github.com/absalomedia/sass-nginx-module) module - with Libsass 3.4.5
 
 ## Changelog
 
 | Release | Description |
 | --- | --- |
+| 0.5.13 | Ray - Manta (Libsass 3.4.5) & PHP stub file |
 | 0.5.12 | Cartography - MapRoot functions |
 | 0.5.11 | Zoomer (Libsass 3.4.4) stable |
 | 0.5.10 | Elwood (Libsass 3.4.3) stable & Travis fix |
