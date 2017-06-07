@@ -35,7 +35,7 @@ class Sass {
 	/**
 	 * Compile file
 	 * @param string $filename input filename
-	 * @return string compiled content of the file
+	 * @return string|string[]
 	 * @throws SassException if compilation failed or invalid arguments given
 	 */
 	public function compileFile($filename) {}
