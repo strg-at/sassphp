@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>sass</name>
+ <channel>pecl.php.net</channel>
+ <summary>SASS - Sass for PHP</summary>
+ <description>SASS compliation for PHP</description>
+ <lead>
+  <name>Lawrence Meckan</name>
+  <user>absalomedia</user>
+  <email>media@absalom.biz</email>
+  <active>yes</active>
+ </lead>
+ <date>2018-01-14</date>
+ <time>08:00:00</time>
+ <version>
+  <release>0.5.14</release>
+  <api>3.4.8</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="https://opensource.org/licenses/MIT">MIT License</license>
+ <notes>
+-
+ </notes>
+ <contents>
+  <dir name="/">
+   <dir name="tests">
+    <file name="arginfo_present.phpt" role="test" />
+    <file name="available.phpt" role="test" />
+    <file name="check_bundled_libsass_version.phpt" role="test" />
+    <file name="class_exists.phpt" role="test" />
+    <file name="class_instantiable.phpt" role="test" />
+    <file name="file_comments.phpt" role="test" />
+    <file name="file_embed.phpt" role="test" />
+    <file name="file_indent.phpt" role="test" />
+    <file name="get_map_path.phpt" role="test" />
+    <file name="get_map_root.phpt" role="test" />
+    <file name="handles_comments.phpt" role="test" />
+    <file name="handles_embed.phpt" role="test" />
+    <file name="handles_include_path.phpt" role="test" />
+    <file name="handles_indent.phpt" role="test" />
+    <file name="handles_map_root.phpt" role="test" />
+    <file name="handles_map.phpt" role="test" />
+    <file name="handles_precision.phpt" role="test" />
+    <file name="handles_style.phpt" role="test" />
+    <file name="old_compile_file_alias_exists.phpt" role="test" />
+    <file name="parse_file_parses_file.phpt" role="test" />
+    <file name="parse_parses_correct_sass.phpt" role="test" />
+    <file name="throw_exception.phpt" role="test" />
+    <file name="support/foo.scss" role="test" />
+    <file name="support/import.scss" role="test" />
+    <file name="support/source_type.sass" role="test" />
+    <file name="support/test.scss" role="test" />
+   </dir>
+   <dir name="src">
+    <file name="php_sass.h" role="src" />
+    <file name="utilities.h" role="src" />
+    <file name="sass.c" role="src" />
+    <file name="utilities.c" role="src" />
+   </dir>
+   <file name="config.m4" role="src" />
+   <file name="config.w32" role="src" />
+   <file name="install.php" role="src" />  
+   <file name="LICENSE" role="doc" />
+   <file name="README.md" role="doc" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.6.0-dev</min>
+   </php>
+   <pearinstaller>
+    <min>1.10</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <providesextension>sass</providesextension>
+ <extsrcrelease>
+  <configureoption name="enable-sass-debug" default="no" prompt="Enable internal debugging in SASS" />
+ </extsrcrelease>
+ <changelog>
+  <release>
+   <date>2018-01-14</date>
+   <version>
+    <release>0.5.14</release>
+    <api>3.4.8</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="https://opensource.org/licenses/MIT">MIT License</license>
+   <notes>
+- Update libsass to 3.4.8
+- Start of work for PECL inclusion
+   </notes>
+  </release>
+ </changelog>
+</package>

@@ -14,7 +14,7 @@ if test "$PHP_SASS" != "no"; then
 
   if test "x$sass_version" != "x" ; then
       # escape hell. This is what we need to pass to the
-      #  compiler: -DLIBSASS_VERSION="\"'3.3.3\""
+      #  compiler: -DLIBSASS_VERSION="\"'3.4.8\""
       CFLAGS="-DLIBSASS_VERSION=\"\\\"$sass_version\\\"\" $CFLAGS"
       CXXFLAGS="-DLIBSASS_VERSION=\"\\\"$sass_version\\\"\" $CXXFLAGS"
   fi
