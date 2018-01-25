@@ -23,6 +23,7 @@
 #include <Zend/zend_exceptions.h>
 
 #include <sass.h>
+#include <sass2scss.h>
 
 zend_class_entry *sass_ce;
 zend_class_entry *sass_exception_ce;

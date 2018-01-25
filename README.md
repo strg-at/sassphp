@@ -155,7 +155,7 @@ These extensions also utilise the [Libsass](https://github.com/hcatlin/libsass) 
 
 | Release | Description |
 | --- | --- |
-| 0.5.13 | Karol - Caroline (Libsass 3.4.8) |
+| 0.5.14 | Karol - Caroline (Libsass 3.4.8) |
 | 0.5.13 | Ray - Manta (Libsass 3.4.5) & PHP stub file |
 | 0.5.12 | Cartography - MapRoot functions |
 | 0.5.11 | Zoomer (Libsass 3.4.4) stable |
