@@ -2,7 +2,7 @@
 
 The `sass` extension for PHP gives you an object-oriented system of parsing [Sass](http://sass-lang.com/) from within your PHP applications. Under the hood it uses [libsass](https://github.com/hcatlin/libsass) to provide super speedy and compatible Sass parsing.
 
-![Libsass 3.4.8](https://img.shields.io/badge/libsass-3.4.8-yellow.svg) [![Build Status](https://travis-ci.org/absalomedia/sassphp.svg)](https://travis-ci.org/absalomedia/sassphp)
+![Libsass 3.5.2](https://img.shields.io/badge/libsass-3.5.2-yellow.svg) [![Build Status](https://travis-ci.org/absalomedia/sassphp.svg)](https://travis-ci.org/absalomedia/sassphp)
 
 ## What's Sass?
 
@@ -148,13 +148,14 @@ If there's a problem, the extension will throw a `SassException`:
 
 These extensions also utilise the [Libsass](https://github.com/hcatlin/libsass) library & remain in varying states of completion:
 
-* Facebook [HHVM](https://github.com/absalomedia/sasshhvm) native (non Zend) extension - with Libsass 3.4.8 - tested up to HHVM 3.11.x
-* [Nginx](https://github.com/absalomedia/sass-nginx-module) module - with Libsass 3.4.8
+* Facebook [HHVM](https://github.com/absalomedia/sasshhvm) native (non Zend) extension - with Libsass 3.5.2 - tested up to HHVM 3.11.x
+* [Nginx](https://github.com/absalomedia/sass-nginx-module) module - with Libsass 3.5.2
 
 ## Changelog
 
 | Release | Description |
 | --- | --- |
+| 0.5.15 | Fallout - Atom (Libsass 3.5.2) |
 | 0.5.14 | Karol - Caroline (Libsass 3.4.8) |
 | 0.5.13 | Ray - Manta (Libsass 3.4.5) & PHP stub file |
 | 0.5.12 | Cartography - MapRoot functions |
