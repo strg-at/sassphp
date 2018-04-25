@@ -27,7 +27,7 @@ typedef struct sass_object {
     zend_object zo;
     #endif
     int style;
-    char* include_paths;
+    char* include_paths[];
     bool comments;
     bool indent;
     long precision;
