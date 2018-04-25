@@ -27,7 +27,7 @@ typedef struct sass_object {
     zend_object zo;
     #endif
     int style;
-    char* include_paths[];
+    char* include_paths;
     bool comments;
     bool indent;
     long precision;
@@ -36,6 +36,8 @@ typedef struct sass_object {
     bool map_embed;
     bool map_contents;
     char* map_root;
+    Sass_C_Function_List functions;
+    Sass_C_Import_Callback importer;
     #if PHP_MAJOR_VERSION >= 7
     zend_object zo;
     #endif
@@ -142,7 +144,8 @@ PHP_METHOD(Sass, __construct)
     obj->map_contents = false;
     obj->omit_map_url = true;
     obj->precision = 5;
-
+    obj->functions = NULL;
+    obj->importer = NULL; 
 }
 
 
@@ -154,6 +157,12 @@ void set_options(sass_object *this, struct Sass_Context *ctx)
     sass_option_set_output_style(opts, this->style);
     sass_option_set_is_indented_syntax_src(opts, this->indent);
     if (this->include_paths != NULL) {
+    char *p;
+        p = strtok (this->include_paths,",");
+        while (p!= NULL)
+        {
+            this->include_paths = strepl(this->include_paths,',',':');
+        }
     sass_option_set_include_path(opts, this->include_paths);
     }
     sass_option_set_source_comments(opts, this->comments);
@@ -171,6 +180,18 @@ void set_options(sass_object *this, struct Sass_Context *ctx)
     sass_option_set_source_map_root(opts, this->map_root);
     }
 
+}
+
+char *strepl(char *cs, char d1, char d2){
+    char *tmp=cs;
+    while(*tmp)
+        if(*tmp == d1)
+            *tmp++ = d2;
+        else
+            *tmp++;
+
+    *tmp='\0';
+    return cs;
 }
 
 /**
