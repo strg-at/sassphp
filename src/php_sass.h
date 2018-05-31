@@ -14,8 +14,8 @@
 #include "config.h"
 #endif
 
-#define SASS_VERSION "0.5.15"
-#define SASS_FLAVOR  "Sassyphpras"
+#define SASS_VERSION "0.5.16"
+#define SASS_FLAVOR "Sassyphpras"
 
 #include <php.h>
 #include <ext/standard/info.h>
@@ -31,17 +31,16 @@ zend_class_entry *sass_exception_ce;
 zend_class_entry *sass_get_exception_base();
 
 #ifdef PHP_WIN32
-# define PHP_SASS_API __declspec(dllexport)
+#define PHP_SASS_API __declspec(dllexport)
 #elif defined(__GNUC__) && __GNUC__ >= 4
-# define PHP_SASS_API __attribute__ ((visibility("default")))
+#define PHP_SASS_API __attribute__((visibility("default")))
 #else
-# define PHP_SASS_API
+#define PHP_SASS_API
 #endif
 
 #ifdef ZTS
-# include "TSRM.h"
+#include "TSRM.h"
 #endif
-
 
 PHP_METHOD(Sass, __construct);
 PHP_METHOD(Sass, compile);
