@@ -2,21 +2,13 @@
 
 ARG_ENABLE("sass", "whether to enable sass extension", "yes");
 
-ADD_FLAG('CFLAGS', ' /wd4005 /wd4267 /wd4244 ');
-ADD_FLAG('CFLAGS_BD_ZEND', ' /wd4018 /wd4101 /wd4090 /wd4273 ');
-ADD_FLAG('CFLAGS_BD_MAIN', ' /wd4018 /wd4090 ');
-ADD_FLAG('CFLAGS_BD_MAIN_STREAMS', ' /wd4013 ');
-DEFINE('RC', '$(RC) /nologo /d _USING_V110_SDK71_');
-ADD_FLAG('CFLAGS_BD_EXT_STANDARD', ' /wd4047 /wd4018 ');
-ADD_FLAG('CFLAGS_BD_SAPI_CLI', ' /wd4018 ');
-
-if (PHP_SASS == "yes") {
-	CHECK_LIB("sass", ' '+ PROGRAM_FILES + '\\Apache Group\\Apache\\libexec', LIBSASS_SHARED_LIBADD);
-	LDFLAGS="-lsass /libpath:/lib/libsass/lib/";
-	EXTENSION("sass", "src/sass.c src/utilities.c", PHP_EXTNAME_SHARED, "/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1");
-
-	if ("x$sass_version" != "x") {
-		CFLAGS="-DLIBSASS_VERSION=\"\\\"$sass_version\\\"\" $CFLAGS";
-		CXXFLAGS="-DLIBSASS_VERSION=\"\\\"$sass_version\\\"\" $CXXFLAGS";
-	}
+if (PHP_SASS != "no") {
+    if (CHECK_LIB("libsass.lib", "sass", PHP_SASS) && CHECK_HEADER_ADD_INCLUDE("sass.h", "CFLAGS_SODIUM")) {
+        EXTENSION("sass", "/src/sass.c");
+        AC_DEFINE('HAVE_LIBSASSLIB', 1 , 'Have the SASS library');
+        AC_DEFINE("HAVE_CRYPTO_AEAD_AES256GCM", 1, "");
+        PHP_INSTALL_HEADERS("ext/sass/", "/src/php_sass.h");
+    } else {
+        WARNING("libSass not enabled; libraries and headers not found");
+    }
 }

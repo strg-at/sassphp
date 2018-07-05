@@ -2,8 +2,9 @@
  * Sass
  * PHP bindings to libsass - fast, native Sass parsing in PHP!
  *
- * https://github.com/jamierumbelow/sassphp
+ * https://github.com/absalomedia/sassphp
  * Copyright (c)2012 Jamie Rumbelow <http://jamierumbelow.net>
+ * Copyright (c)2017 Lawrence Meckan <http://absalom.biz>
  */
 
 #ifndef PHP_SASS_H
@@ -13,8 +14,8 @@
 #include "config.h"
 #endif
 
-#define SASS_VERSION "0.5.10"
-#define SASS_FLAVOR  "Sassyphpras"
+#define SASS_VERSION "0.5.16"
+#define SASS_FLAVOR "Sassyphpras"
 
 #include <php.h>
 #include <ext/standard/info.h>
@@ -22,11 +23,24 @@
 #include <Zend/zend_exceptions.h>
 
 #include <sass.h>
+#include <sass2scss.h>
 
 zend_class_entry *sass_ce;
 zend_class_entry *sass_exception_ce;
 
 zend_class_entry *sass_get_exception_base();
+
+#ifdef PHP_WIN32
+#define PHP_SASS_API __declspec(dllexport)
+#elif defined(__GNUC__) && __GNUC__ >= 4
+#define PHP_SASS_API __attribute__((visibility("default")))
+#else
+#define PHP_SASS_API
+#endif
+
+#ifdef ZTS
+#include "TSRM.h"
+#endif
 
 PHP_METHOD(Sass, __construct);
 PHP_METHOD(Sass, compile);
@@ -45,5 +59,7 @@ PHP_METHOD(Sass, getEmbed);
 PHP_METHOD(Sass, setEmbed);
 PHP_METHOD(Sass, getMapPath);
 PHP_METHOD(Sass, setMapPath);
+PHP_METHOD(Sass, getMapRoot);
+PHP_METHOD(Sass, setMapRoot);
 
 #endif

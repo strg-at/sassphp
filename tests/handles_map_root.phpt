@@ -1,5 +1,5 @@
 --TEST--
-correctly handles setting and getting source map formats
+correctly handles setting map root
 --SKIPIF--
 <?php if (!extension_loaded("sass")) print "skip"; ?>
 --FILE--
@@ -8,17 +8,18 @@ correctly handles setting and getting source map formats
 $sass = new Sass();
 // test default from constructor
 $sass->setComments(true);
-$sass->setMapPath(__DIR__.'/support/test.css.map');
+$sass->setMapRoot('support');
+$sass->setMapPath('map_root.css.map');
 $css = $sass->compileFile(__DIR__.'/support/test.scss');
 echo $css[1];
-
 ?>
 --EXPECT--
 {
 	"version": 3,
-	"file": "test.css",
+	"file": "tests/support/test.css",
+	"sourceRoot": "support",
 	"sources": [
-		"test.scss"
+		"tests/support/test.scss"
 	],
 	"sourcesContent": [
 		"@import url(../blahblah/blah.blah);\n\ndiv {\n  blah: \"hello #{2+2} world #{unit(23px)} #{'bloo'} blah\";\n}\n\n$foo: iphone;\n\ndiv {\n    blah: \"foo #{$foo}\"\n}\n"
