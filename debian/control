@@ -1,5 +1,5 @@
 Source: sassphp
-Section: web
+Section: php
 Priority: optional
 Maintainer: Rhonda D'Vine <rhonda@strg.at>
 Build-Depends: debhelper (>= 11~), libsass-dev, php-all-dev, dh-php
