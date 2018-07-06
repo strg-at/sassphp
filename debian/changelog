@@ -1,3 +1,9 @@
+sassphp (0.5.16-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Rhonda D'Vine <rhonda@strg.at>  Thu, 05 Jul 2018 17:07:42 +0200
+
 sassphp (0.5.10-3) unstable; urgency=low
 
   [ Ondřej Surý ]
