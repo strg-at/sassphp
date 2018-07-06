@@ -2,7 +2,7 @@ Source: sassphp
 Section: web
 Priority: optional
 Maintainer: Rhonda D'Vine <rhonda@strg.at>
-Build-Depends: debhelper (>= 9), libsass-dev, php-all-dev, dh-php
+Build-Depends: debhelper (>= 11~), libsass-dev, php-all-dev, dh-php
 Standards-Version: 3.9.8
 Homepage: https://github.com/absalomedia/sassphp
 Vcs-Git: https://github.com/strg-at/sassphp.git
